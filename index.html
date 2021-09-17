@@ -24,7 +24,10 @@
 		<p>Subscribe and get notified</p> 
 
 		<div class="input">
-			<input type="email" name="email" id="email" placeholder="Your email address...">
+			<div class="emailwithError">
+				<input type="email" name="email" id="email" placeholder="Your email address...">
+				<span class="emailError">Please provide a valid email address</span>	
+			</div>
 			<button>Notify Me</button> 
 		</div>
 	</div>
@@ -52,5 +55,27 @@
 			Coded by <a href="#">Mazano Kuhudzai</a>.
 		</p>
 	</footer>
+	<script>
+		function validateEmail(email) {
+			const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(String(email).toLowerCase());
+		}
+
+		const email = document.querySelector("#email")
+		const errorMessage = document.querySelector(".emailError")
+		var errorState = false;
+
+		email.addEventListener("blur",(e)=>{
+			if (e.target.value === "" || validateEmail(e.target.value)){
+				email.style.borderColor = "hsl(223, 100%, 88%)";
+				errorMessage.style.display = "none";
+				errorState = false;
+			}else{
+				email.style.borderColor = "hsl(354, 100%, 66%)";
+				errorMessage.style.display = "unset";
+				errorState = true;
+			}
+		})
+	</script>
 </body>
 </html>

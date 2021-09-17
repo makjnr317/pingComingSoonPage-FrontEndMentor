@@ -26,6 +26,19 @@ body{
     padding: 80px 0 0 0;
 }
 
+.emailwithError{
+    flex-direction: column;
+    display: inline-flex;
+}
+
+.emailError{
+    color: $LightRed;
+    font-style: italic;
+    margin: 5px 0 0 20px;
+    font-size: 0.7rem;
+    display: none;
+}
+
 .dashboard{
     width: 650px;
 }
@@ -72,6 +85,11 @@ h1{
         padding: 3px;
         display: grid;
         place-content: center;
+
+        &:hover{
+            color: white;
+            background: $Blue;
+        }
     }
 }
 
@@ -152,12 +170,20 @@ button{
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        height: 120px;
+        height: 128px;
 
         *{
             width: 400px;
             margin: 0;
         }
+    }
+
+    .emailwithError{
+        margin-bottom: 8px;
+    }
+
+    .emailError{
+        margin-left: 22px;
     }
 
 
@@ -169,7 +195,7 @@ button{
 
 @media (max-width:450px) {
     .input{
-        height: 93px;
+        height: 105px;
 
         *{
             height: 40px;

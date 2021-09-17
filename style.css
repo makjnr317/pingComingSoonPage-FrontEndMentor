@@ -19,6 +19,19 @@ body {
   padding: 80px 0 0 0;
 }
 
+.emailwithError {
+  flex-direction: column;
+  display: inline-flex;
+}
+
+.emailError {
+  color: #ff5263;
+  font-style: italic;
+  margin: 5px 0 0 20px;
+  font-size: 0.7rem;
+  display: none;
+}
+
 .dashboard {
   width: 650px;
 }
@@ -65,6 +78,11 @@ h1 span {
   padding: 3px;
   display: grid;
   place-content: center;
+}
+
+.icons i:hover {
+  color: white;
+  background: #4f7df3;
 }
 
 input {
@@ -136,11 +154,17 @@ button:hover {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 120px;
+    height: 128px;
   }
   .input * {
     width: 400px;
     margin: 0;
+  }
+  .emailwithError {
+    margin-bottom: 8px;
+  }
+  .emailError {
+    margin-left: 22px;
   }
   .dashboard {
     width: 420px;
@@ -149,7 +173,7 @@ button:hover {
 
 @media (max-width: 450px) {
   .input {
-    height: 93px;
+    height: 105px;
   }
   .input * {
     height: 40px;
