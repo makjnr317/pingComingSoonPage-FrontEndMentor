@@ -76,8 +76,9 @@ h1 span {
   border: 1px solid #c2d3ff;
   border-radius: 50%;
   padding: 3px;
-  display: grid;
-  place-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icons i:hover {

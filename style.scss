@@ -83,8 +83,9 @@ h1{
         border: 1px solid $PaleBlue;
         border-radius: 50%;
         padding: 3px;
-        display: grid;
-        place-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:hover{
             color: white;
